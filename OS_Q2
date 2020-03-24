@@ -17,3 +17,17 @@ int main()
     scanf("%d",&a_time[count]); 
     scanf("%d",&b_time[count]);  
   } 
+for(i=0;i<n;i++)
+{	if(a_time[i]==0)
+	{		printf("\nS INVALID ARRIVAL TIME\n");
+		getch();
+		exit(1);
+	}
+}
+for(i=0;i<n;i++)
+{	if(a_time[i]<3)
+	{	printf("\nS INVALID Arrival Time it should be greater than 3\n");
+		getch();
+		exit(1);
+	}
+}
