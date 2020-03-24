@@ -71,3 +71,15 @@ void *barber(void *param) {
 	  sleep(worktime);
     } 
 }
+void *client(void *param) {
+   int waittime;
+
+   while(1) {
+      /* wait for mutex to access chair count (chair_mutex) */
+	  sem_wait(&chairs_mutex);
+      /* if there are no chairs */
+	  if(num_chairs <= 0){
+           /* free mutex lock on chair count */
+		   printf("Client: Thread %u leaving with no haircut\n", (unsigned int)pthread_self());
+		   sem_post(&chairs_mutex);
+	  }
