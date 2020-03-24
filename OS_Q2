@@ -77,3 +77,21 @@ for(i=time;i<=m;i=i+b_time[j])
 		y++;
 	}
 }
+printf("\n\nAVERAGE WAITING TIME= %.2f\n",k/n); 
+printf("AVERAGE TURNAROUND TIME = %.2f",x/n); 
+printf("\n\n\nTOTAL TIME TAKEN BY PROCESSOR TO COMPLETE ALL JOBS: %d",m);  
+printf("\n\nQUEUE::ORDER OF EXECUTION:\n");
+printf("\nPROCESS		");
+
+for(i=0;i<n;i++)
+{
+	printf(" P[%d]   ",p[i]);
+	if(i==(n-1))
+	{
+		printf("End");
+	}
+}
+
+
+  return 0; 
+}
