@@ -48,4 +48,16 @@ int main(int argc, char *argv[]) {
    printf("Main thread exiting\n");
    exit(0);
 }
---------------------------------------------
+void *barber(void *param) {
+   int worktime;
+  
+   while(1) {
+      /* wait for a client to become available (sem_client) */
+	  sem_wait(&sem_client);
+      /* wait for mutex to access chair count (chair_mutex) */
+	  sem_wait(&chairs_mutex);
+      /* increment number of chairs available */
+	  num_chairs += 1;
+	  printf("Barber: Taking a client. Number of chairs available = %d\n",num_chairs);
+      /* signal to client that barber is ready to cut their hair (sem_barber) */
+	  sem_post(&sem_barber);
