@@ -45,3 +45,21 @@ for(i=0;i<n;i++)
 		time=a_time[i];
 	}
 }
+for(i=time;i<=m;i=i+b_time[j])
+{	min=m;
+	remain=0;
+	flag=0;
+
+	for(count=0;count<n;count++)
+	{
+		if(a_time[count]<=i)
+		{
+			if(b_time[count]<min)
+			{
+				min = b_time[count];
+				j=count;
+				flag=1;
+			}
+			remain=1;	 
+		}
+	}
