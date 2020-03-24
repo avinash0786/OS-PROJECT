@@ -1,5 +1,5 @@
 # OS-PROJECT
-Q2::
+Q1::
 A barbershop consists of a waiting room with n chairs and a barber
 room with one barber chair. If there are no customers to be served, the
 barber goes to sleep. If a customer enters the barbershop and all chairs
