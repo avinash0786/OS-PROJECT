@@ -98,3 +98,10 @@ void *client(void *param) {
            /* get haircut */
 		   printf("Client: Thread %u getting a haircut\n",(unsigned int)pthread_self());
 	  }
+      /* generate random number, waittime, for length of wait until next haircut or next try.  Max value from command line. */
+	  waittime = (rand() % clientWait) + 1;
+      /* sleep for waittime seconds */
+	  printf("Client: Thread %u waiting %d seconds before attempting next haircut\n",(unsigned int)pthread_self(),waittime);
+	  sleep(waittime);
+     }
+}
