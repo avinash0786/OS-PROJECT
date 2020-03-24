@@ -20,11 +20,7 @@ int main(int argc, char *argv[]) {
 	printf("Main thread beginning\n");
    /* 1. Get command line arguments */
    int runTime,clients,i;
-   if (argc != 5){
-	   printf("Please enter 4 arguments: <Program run time> <Number of clients>\n");
-	   printf("<Number of chairs> <Client wait time>\n");
-	   exit(0);
-   }
+
    runTime = atoi(argv[1]);
    clients = atoi(argv[2]);
    num_chairs = atoi(argv[3]);
