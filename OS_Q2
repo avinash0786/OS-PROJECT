@@ -31,3 +31,17 @@ for(i=0;i<n;i++)
 		exit(1);
 	}
 }
+  printf("\n\n\tPROCESS\t|        TAT     |Waiting Time\n"); 
+  printf("\t-----------------------------------------\n");
+for(i=0;i<n;i++)
+{
+	m=m+b_time[i];
+}
+min=m;
+time=m;
+for(i=0;i<n;i++)
+{	if(a_time[i]<time)
+	{
+		time=a_time[i];
+	}
+}
