@@ -83,3 +83,18 @@ void *client(void *param) {
 		   printf("Client: Thread %u leaving with no haircut\n", (unsigned int)pthread_self());
 		   sem_post(&chairs_mutex);
 	  }
+
+      /* else if there are chairs */
+	  else{
+           /* decrement number of chairs available */
+		   num_chairs -= 1;
+		   printf("Client: Thread %u Sitting to wait. Number of chairs left = %d\n",(unsigned int)pthread_self(),num_chairs);
+           /* signal that a customer is ready (sem_client) */
+		   sem_post(&sem_client);
+           /* free mutex lock on chair count */
+		   sem_post(&chairs_mutex);
+           /* wait for barber (sem_barber) */
+		   sem_wait(&sem_barber);
+           /* get haircut */
+		   printf("Client: Thread %u getting a haircut\n",(unsigned int)pthread_self());
+	  }
