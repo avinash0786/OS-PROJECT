@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
    sem_init(&sem_barber,0,0);
    /* 3. Create barber thread. */
    pthread_create(&barberid, NULL, barber, NULL);
-   printf("Creating barber thread with id %lu\n",barberid);
+   printf("Ceated barber thread with id %lu\n",barberid);
    /* 4. Create client threads.  */
    for (i = 0; i < clients; i++){
 	   pthread_create(&clientids[i], NULL, client, NULL);
